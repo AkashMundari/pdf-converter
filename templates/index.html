@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF to DOCX Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .upload-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+      }
+      .upload-container h1 {
+        margin-bottom: 20px;
+      }
+      .drop-zone {
+        border: 2px dashed #007bff;
+        border-radius: 4px;
+        padding: 20px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+        position: relative;
+        color: rgba(0, 0, 0, 0.1);
+      }
+      .drop-zone.dragover {
+        background-color: #e0e0e0;
+      }
+      .drop-zone img {
+        display: none;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .upload-container button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .upload-container button:disabled {
+        background-color: #ccc;
+      }
+      .upload-container #downloadBtn {
+        display: none;
+        background-color: #007bff;
+        margin-top: 10px;
+      }
+      .upload-container #downloadBtn a {
+        color: white;
+        text-decoration: none;
+      }
+      .progress-bar-container {
+        display: none;
+        width: 100%;
+        background-color: #e0e0e0;
+        border-radius: 4px;
+        margin-top: 20px;
+      }
+      .progress-bar {
+        width: 0%;
+        height: 20px;
+        background-color: #007bff;
+        border-radius: 4px;
+        text-align: center;
+        color: white;
+        line-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="upload-container">
+      <h1>PDF to DOCX Converter</h1>
+      <div class="drop-zone" id="dropZone">
+        <img src="pdf-icon.png" alt="PDF Icon" id="pdfIcon" />
+        Drag and drop your PDF files here or click to upload
+      </div>
+      <input type="file" id="pdfFile" accept=".pdf" style="display: none" />
+      <button id="uploadBtn" disabled>Upload and Convert</button>
+      <button id="downloadBtn">
+        <a id="downloadLink">Download Converted File</a>
+      </button>
+      <div class="progress-bar-container" id="progressBarContainer">
+        <div class="progress-bar" id="progressBar">0%</div>
+      </div>
+    </div>
+
+    <script src="/static/main.js"></script>
+  </body>
+</html>
